@@ -2,12 +2,12 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   margin: 20px 0;
-  background: #6589F9;
+  background: #6589f9;
 }
 
 .grid {
@@ -17,19 +17,19 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }
 
 .card {
   position: relative;
-  -webkit-transition: all .4s linear;
-  -o-transition: all .4s linear;
-  transition: all .4s linear;
+  -webkit-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   margin: 5px;
 }
 
@@ -44,17 +44,18 @@ body {
 .front {
   position: absolute;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .front {
-  background: #FAB942 url('../img/question.gif') no-repeat center center / contain;
+  background: #fab942 url("../img/question.gif") no-repeat center center /
+    contain;
 }
 
 .back {
   -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  background-color: #6589F9;
+  transform: rotateY(180deg);
+  background-color: #6589f9;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -62,9 +63,13 @@ body {
 
 .selected {
   -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .match .front {
-  background: #6589F9 !important;
+  background: #6589f9 !important;
+}
+
+#wrongGuesses {
+  font-size: 100px;
 }

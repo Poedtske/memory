@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End Screen</title>
+    <link rel="stylesheet" href="css/victoryScreen.css">
+</head>
+<body>
+
+    <!-- Video element -->
+    <video id="video" width="600" controls autoplay loop>
+        <source src="img/miss.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Result message -->
+    <div id="resultMessage"></div>
+
+    <script>
+        // Function to get a specific cookie by name
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // Get the "result" cookie
+        const result = getCookie("result");
+
+        // Display a message based on the result
+        const resultMessage = document.getElementById("resultMessage");
+        if (result === "win") {
+            resultMessage.innerHTML = "<h1>Congratulations! You Win!</h1>";
+            // Change video to a victory video if needed
+            document.getElementById("video").src = "img/victory.mp4"; // Update to victory video
+            document.getElementById("video").load();
+        } else if (result === "lose") {
+            resultMessage.innerHTML = "<h1>Sorry, You Lose!</h1>";
+        } else {
+            resultMessage.innerHTML = "<h1>No Result Available!</h1>";
+        }
+    </script>
+
+</body>
+</html>
